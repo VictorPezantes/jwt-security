@@ -4,7 +4,6 @@ import com.pe.ttk.admision.dto.Mensaje;
 import com.pe.ttk.admision.dto.OfertaDto;
 import com.pe.ttk.admision.entity.Oferta;
 import com.pe.ttk.admision.service.OfertaService;
-import com.pe.ttk.admision.util.ConvertFecha;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -23,8 +22,6 @@ public class OfertaController {
 
     @Autowired
    OfertaService ofertaService;
-
-    ConvertFecha convertFecha = new ConvertFecha();
 
     @ApiOperation("Lista todas las ofertas creadas")
     @PreAuthorize("hasRole('ADMIN')")
@@ -71,14 +68,23 @@ public class OfertaController {
 
        Date fechaCreacion= Date.valueOf(ofertaDto.getFechaCreacion());
        Date fechaPublicacion;
+        Oferta oferta = new Oferta();
 
        if(ofertaDto.getFechaPublicacion().isEmpty()) {
            fechaPublicacion = null;
        }else{
            fechaPublicacion =Date.valueOf(ofertaDto.getFechaPublicacion());
        }
-        Oferta oferta = new Oferta(ofertaDto.getEstado(),ofertaDto.getTitulo(),ofertaDto.getDescripcion(),ofertaDto.getRequisito(),ofertaDto.getCreador(),fechaCreacion
-                ,fechaPublicacion,ofertaDto.getCargoPostular(),ofertaDto.getCantidadPostulantes());
+
+        oferta.setEstado(ofertaDto.getEstado());
+        oferta.setCantidadPostulantes(ofertaDto.getCantidadPostulantes());
+        oferta.setCargoPostular(ofertaDto.getCargoPostular());
+        oferta.setCreador(ofertaDto.getCreador());
+        oferta.setFechaPublicacion(fechaCreacion);
+        oferta.setFechaCreacion(fechaPublicacion);
+        oferta.setDescripcion(oferta.getDescripcion());
+        oferta.setRequisito(ofertaDto.getRequisito());
+        oferta.setTitulo(ofertaDto.getTitulo());
         ofertaService.save(oferta);
         return new ResponseEntity(new Mensaje("Oferta creada"), HttpStatus.CREATED);
     }
