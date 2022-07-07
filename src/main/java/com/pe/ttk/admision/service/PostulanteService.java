@@ -1,49 +1,25 @@
 package com.pe.ttk.admision.service;
 
-
+import com.pe.ttk.admision.dto.PostulanteDto;
 import com.pe.ttk.admision.entity.Postulante;
-import com.pe.ttk.admision.repository.PostulanteRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 
-import java.sql.Date;
 import java.util.List;
 import java.util.Optional;
 
 @Service
-@Transactional
-public class PostulanteService {
-
-    @Autowired
-    PostulanteRepository postulanteRepository;
-
-    public List<Postulante> list(){
-        return postulanteRepository.findAll();
-    }
+public interface PostulanteService {
 
 
 
-    public List<Postulante> findByEstadoPostulacion(String estadoPostulacion){
+    public List<Postulante> list();
+    public List<PostulanteDto> findByQueryString(String estadoPostulacion,String distrito, String provincia, String departamento,String profesion,String responsableAsignado,String procedencia,
+                                                        String apellidoPaterno);
 
-        return postulanteRepository.findByEstadoPostulacion(estadoPostulacion);
-    };
+    public void  savePostulante(PostulanteDto postulanteDto, MultipartFile cv, MultipartFile dniF, MultipartFile dniP, MultipartFile foto);
+    public void  UpdatePostulante(Postulante postulante,PostulanteDto postulanteDto,MultipartFile dnifrontal,MultipartFile dniposterior,MultipartFile foto);
 
-    public Optional<Postulante> findByPrimerNombre(String primerNombre){
-
-        return postulanteRepository.findByPrimerNombre(primerNombre);
-    };
-
-    public void  save(Postulante postulante){
-        postulanteRepository.save(postulante);
-    }
-
-    public void delete(int id){
-        postulanteRepository.deleteById(id);
-    }
-
-    public Optional<Postulante> getOne(int id){
-        return postulanteRepository.findById(id);
-    }
-
+    public void delete(int id);
+    public Optional<Postulante> getOne(int id);
 }

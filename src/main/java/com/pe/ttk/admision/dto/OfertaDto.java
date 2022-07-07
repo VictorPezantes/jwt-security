@@ -8,6 +8,7 @@ import lombok.Setter;
 import javax.persistence.Column;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Null;
 import java.sql.Date;
 
 @Getter
@@ -16,6 +17,7 @@ import java.sql.Date;
 @AllArgsConstructor
 public class OfertaDto {
 
+    private int id;
     private String estado;
     private String titulo;
     private String descripcion;
@@ -24,7 +26,7 @@ public class OfertaDto {
     private String fechaCreacion;
     private String fechaPublicacion;
     private String CargoPostular;
-    public int cantidadPostulantes;
-
-
+    private int cantidadPostulantes;
+    private String fechaActualización;
+    private String fechaDesactivado;
 }

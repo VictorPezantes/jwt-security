@@ -1,53 +1,33 @@
 package com.pe.ttk.admision.service;
 
+import com.pe.ttk.admision.dto.OfertaDto;
 import com.pe.ttk.admision.entity.Oferta;
-import com.pe.ttk.admision.repository.OfertaRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.Date;
 import java.util.List;
 import java.util.Optional;
 
 @Service
-@Transactional
-public class OfertaService {
+public interface OfertaService {
 
-    @Autowired
-    OfertaRepository  ofertaRepository;
 
-    public List<Oferta> list(){
-        return ofertaRepository.findAll();
-    }
+    List<Oferta> listarOfertas();
 
-    public List<Oferta> findByEstado(String estado){
+    List<Oferta> findByEstado(String estado);
 
-        return ofertaRepository.findByEstado(estado);
-    };
+    List<Oferta> findByFechaPublicacion(Date fechaPublicacion);
 
-    public List<Oferta> findByFechaPublicacion(Date fechaPublicacion){
+    Optional<Oferta> findByTitulo(String titulo);
 
-        return ofertaRepository.findByFechaPublicacion(fechaPublicacion);
-    };
+    List<Oferta> findByCreador(String creador);
 
-    public Optional<Oferta> findByTitulo(String titulo){
-        return ofertaRepository.findByTitulo(titulo);
-    };
-    public List<Oferta> findByCreador(String creador){
-        return ofertaRepository.findByCreador(creador);
-    };
+    void registrarOferta(OfertaDto ofertaDto);
+    void actualizarOferta(int id, OfertaDto ofertaDto);
 
-    public void  save(Oferta oferta){
-        ofertaRepository.save(oferta);
-    }
+    void actualizarEstado(int id, OfertaDto ofertaDto);
 
-    public void delete(int id){
-        ofertaRepository.deleteById(id);
-    }
+    void delete(int id);
 
-    public Optional<Oferta> getOne(int id){
-        return ofertaRepository.findById(id);
-    }
-
+    Optional<Oferta> getOne(int id);
 }

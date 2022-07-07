@@ -14,8 +14,8 @@ public interface OfertaRepository extends JpaRepository<Oferta, Integer> {
 
 
     List<Oferta> findAll();
-    List<Oferta> findByEstado(String estado);
+    List<Oferta> findByEstadoIgnoreCase(String estado);
     List<Oferta> findByFechaPublicacion(Date fechaPublicacion);
-    Optional<Oferta> findByTitulo(String titulo);
-    List<Oferta> findByCreador(String creador);
+    Optional<Oferta> findByTituloIgnoreCase(String titulo);
+    List<Oferta> findByCreadorIgnoreCase(String creador);
 }

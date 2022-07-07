@@ -2,7 +2,9 @@ package com.pe.ttk.admision.repository;
 
 import com.pe.ttk.admision.entity.Oferta;
 import com.pe.ttk.admision.entity.Postulante;
+import com.pe.ttk.admision.entity.mapping.PostulanteMapping;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.sql.Date;
@@ -14,6 +16,7 @@ public interface PostulanteRepository extends JpaRepository<Postulante,Integer> 
 
 
     List<Postulante> findAll();
-    List<Postulante> findByEstadoPostulacion(String estadoPostulacion);
-    Optional<Postulante> findByPrimerNombre(String primerNombre);
+    List<PostulanteMapping> findByQueryString(@Param("dni") String dni,@Param("distrito") String distrito,
+                                              @Param("provincia") String provincia, @Param("departamento") String departamento);
+
 }

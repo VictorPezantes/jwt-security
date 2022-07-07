@@ -24,10 +24,12 @@ public class Oferta {
     private String requisito;
     private String creador;
     private Date fechaCreacion;
+    private Date fechaActualización;
     private Date fechaPublicacion;
+    private Date fechaDesactivado;
     private String CargoPostular;
     @Column(name = "cantidad_postulantes")
-    public int cantidadPostulantes;
+    private int cantidadPostulantes;
 
 
 }

@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.Column;
+import java.awt.*;
+import java.io.InputStream;
 import java.sql.Date;
 
 @Getter
@@ -38,14 +40,21 @@ public class PostulanteDto {
     private String fechaSalidaTrabajoreciente;
     private String EmpresaTrabajoReciente;
     private String motivoSalidaTrabajoReciente;
-    private Byte[] curriculumVitae;
-    private Byte[] dniFrontal;
-    private Byte[] dniPosterior;
-    private Byte[] fotografia;
+    private String curriculumVitae;
+    private String dniFrontal;
+    private String dniPosterior;
+    private String fotografia;
     private String respuestaDisponibilidadViajar;
     private String respuestaExperienciaMantencion;
     private String estadoPostulacion;
     private String subEstadoPostulacion;
     private String fechaPostulacion;
+    private String procedencia;
+    private String cargoPostulante;
+    private String ofertaPostulada;
+    private int cantidadPostulaciones;
+    private String responsableAsignado;
+    private String dni;
+
 
 }
