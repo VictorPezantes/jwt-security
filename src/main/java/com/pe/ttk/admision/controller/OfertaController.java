@@ -58,8 +58,8 @@ public class OfertaController {
     }
     @ApiOperation("Muestra una oferta buscada por su título")
     @PreAuthorize("hasRole('ADMIN')")
-    @GetMapping(value = "/titulo/{titulo}",produces = "application/json")
-    public ResponseEntity<Oferta> obtenerOfertaPorTítulo(@PathVariable("titulo") String titulo){
+    @GetMapping(value = "/titulo",produces = "application/json")
+    public ResponseEntity<Oferta> obtenerOfertaPorTítulo(@RequestParam("titulo") String titulo){
         Optional<Oferta> oferta = ofertaService.findByTitulo(titulo);
         return new ResponseEntity(oferta, HttpStatus.OK);
     }
@@ -97,7 +97,7 @@ public class OfertaController {
         ofertaService.actualizarEstado(id,ofertaDto);
         return new ResponseEntity(new Mensaje("El estado de la oferta ha sido actualizado "), HttpStatus.ACCEPTED);
     }
-    @ApiOperation("Crear ofertas")
+    @ApiOperation("Eliminar una oferta por id")
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/eliminar")
     public ResponseEntity<?> eliminarOferta(@RequestParam("id")int id){
