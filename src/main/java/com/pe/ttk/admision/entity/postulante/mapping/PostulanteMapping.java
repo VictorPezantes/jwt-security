@@ -1,4 +1,4 @@
-package com.pe.ttk.admision.entity.mapping;
+package com.pe.ttk.admision.entity.postulante.mapping;
 
 import java.sql.Date;
 

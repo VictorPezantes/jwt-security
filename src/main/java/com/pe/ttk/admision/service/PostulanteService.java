@@ -1,7 +1,7 @@
 package com.pe.ttk.admision.service;
 
 import com.pe.ttk.admision.dto.PostulanteDto;
-import com.pe.ttk.admision.entity.Postulante;
+import com.pe.ttk.admision.entity.postulante.Postulante;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 

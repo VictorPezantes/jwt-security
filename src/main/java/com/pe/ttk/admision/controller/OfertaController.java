@@ -2,7 +2,7 @@ package com.pe.ttk.admision.controller;
 
 import com.pe.ttk.admision.dto.Mensaje;
 import com.pe.ttk.admision.dto.OfertaDto;
-import com.pe.ttk.admision.entity.Oferta;
+import com.pe.ttk.admision.entity.oferta.Oferta;
 import com.pe.ttk.admision.service.impl.OfertaServiceImpl;
 import com.pe.ttk.admision.util.PaginationUtils;
 import io.swagger.annotations.ApiOperation;

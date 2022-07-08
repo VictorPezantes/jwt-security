@@ -1,7 +1,7 @@
 package com.pe.ttk.admision.service.impl;
 
 import com.pe.ttk.admision.dto.OfertaDto;
-import com.pe.ttk.admision.entity.Oferta;
+import com.pe.ttk.admision.entity.oferta.Oferta;
 import com.pe.ttk.admision.repository.OfertaRepository;
 import com.pe.ttk.admision.service.OfertaService;
 import com.pe.ttk.admision.util.ConvertirFechas;

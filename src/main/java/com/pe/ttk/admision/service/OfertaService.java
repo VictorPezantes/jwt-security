@@ -1,7 +1,7 @@
 package com.pe.ttk.admision.service;
 
 import com.pe.ttk.admision.dto.OfertaDto;
-import com.pe.ttk.admision.entity.Oferta;
+import com.pe.ttk.admision.entity.oferta.Oferta;
 import org.springframework.stereotype.Service;
 
 import java.sql.Date;

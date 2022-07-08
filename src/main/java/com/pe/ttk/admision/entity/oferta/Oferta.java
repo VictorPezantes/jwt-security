@@ -1,4 +1,4 @@
-package com.pe.ttk.admision.entity;
+package com.pe.ttk.admision.entity.oferta;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

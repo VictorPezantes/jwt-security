@@ -2,7 +2,7 @@ package com.pe.ttk.admision.controller;
 
 import com.pe.ttk.admision.dto.Mensaje;
 import com.pe.ttk.admision.dto.PostulanteDto;
-import com.pe.ttk.admision.entity.Postulante;
+import com.pe.ttk.admision.entity.postulante.Postulante;
 import com.pe.ttk.admision.exceptions.TTKDataException;
 import com.pe.ttk.admision.service.impl.PostulanteServiceImpl;
 import com.pe.ttk.admision.util.FilterParam;
