@@ -1,6 +1,5 @@
-package com.pe.ttk.admision.entity;
+package com.pe.ttk.admision.entity.postulante;
 
-import com.pe.ttk.admision.entity.mapping.PostulanteMapping;
 import lombok.*;
 
 import javax.persistence.*;
@@ -12,7 +11,6 @@ import java.sql.Date;
 @AllArgsConstructor
 @Entity
 @Data
-
 @SqlResultSetMappings({
         @SqlResultSetMapping(name = "PostulanteMapping",
                         columns = {@ColumnResult(name = "primerNombre"),

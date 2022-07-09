@@ -1,0 +1,13 @@
+package com.pe.ttk.admision.repository;
+
+
+import com.pe.ttk.admision.entity.master.Encargado;
+import com.pe.ttk.admision.entity.master.Estado;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface EncargadoRepository extends JpaRepository<Encargado, Long> {
+
+
+}

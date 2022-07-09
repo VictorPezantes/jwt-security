@@ -1,5 +1,8 @@
 package com.pe.ttk.admision.dto;
 
+import com.pe.ttk.admision.entity.master.Cargo;
+import com.pe.ttk.admision.entity.master.Encargado;
+import com.pe.ttk.admision.entity.master.Estado;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,15 +20,14 @@ import java.sql.Date;
 @AllArgsConstructor
 public class OfertaDto {
 
-    private int id;
-    private String estado;
+    private Estado estadoOferta;
     private String titulo;
     private String descripcion;
     private String requisito;
-    private String creador;
+    private Encargado creadorOferta;
     private String fechaCreacion;
     private String fechaPublicacion;
-    private String CargoPostular;
+    private Cargo CargoOferta;
     private int cantidadPostulantes;
     private String fechaActualización;
     private String fechaDesactivado;
