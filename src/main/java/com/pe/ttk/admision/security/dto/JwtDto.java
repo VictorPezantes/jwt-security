@@ -9,11 +9,7 @@ public class JwtDto {
 	private String token;
 	private String nombreUsuario;
 	private Collection<? extends  GrantedAuthority> authorities;
-<<<<<<< HEAD
 
-=======
-	
->>>>>>> 592b9d441f68429fc22c8886d2449f919edbe124
 	public JwtDto(String token) {
 
 		this.token = token;
