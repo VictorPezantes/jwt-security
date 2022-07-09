@@ -1,9 +1,5 @@
 package com.pe.ttk.admision.service.impl;
 
-<<<<<<< HEAD
-import com.pe.ttk.admision.dto.OfertaDto;
-=======
->>>>>>> 592b9d441f68429fc22c8886d2449f919edbe124
 import com.pe.ttk.admision.entity.oferta.Oferta;
 import com.pe.ttk.admision.repository.OfertaRepository;
 import com.pe.ttk.admision.service.OfertaService;
@@ -65,9 +61,7 @@ public class OfertaServiceImpl implements OfertaService {
 
     /* @Override
     public void actualizarEstado(Long id, Oferta oferta) {
-
         oferta.setId(id);
-
         if(oferta.getEstadoOferta().getEstado().equalsIgnoreCase("activada")){
             oferta.setEstado(null);
             oferta.setFechaPublicacion(convertirFechas.stringToDateSql());
@@ -75,6 +69,5 @@ public class OfertaServiceImpl implements OfertaService {
             oferta.setEstado(null);
             oferta.setFechaDesactivado(convertirFechas.stringToDateSql());
         }
-
     }*/
 }

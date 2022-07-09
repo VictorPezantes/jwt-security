@@ -1,9 +1,5 @@
 package com.pe.ttk.admision.service;
 
-<<<<<<< HEAD
-import com.pe.ttk.admision.dto.OfertaDto;
-=======
->>>>>>> 592b9d441f68429fc22c8886d2449f919edbe124
 import com.pe.ttk.admision.entity.oferta.Oferta;
 import org.springframework.stereotype.Service;
 
