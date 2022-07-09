@@ -1,30 +1,5 @@
 package com.pe.ttk.admision.entity.oferta;
 
-<<<<<<< HEAD
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
-import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-import java.sql.Date;
-
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@Entity
-public class Oferta {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    private String estado;
-    private String titulo;
-    private String descripcion;
-    private String requisito;
-    private String creador;
-=======
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.pe.ttk.admision.entity.master.Cargo;
 import com.pe.ttk.admision.entity.master.Encargado;
@@ -55,18 +30,10 @@ public class Oferta implements Serializable{
     @Column(nullable = false)
     private String requisito;
     @Column(nullable = false)
->>>>>>> 592b9d441f68429fc22c8886d2449f919edbe124
     private Date fechaCreacion;
     private Date fechaActualización;
     private Date fechaPublicacion;
     private Date fechaDesactivado;
-<<<<<<< HEAD
-    private String CargoPostular;
-    @Column(name = "cantidad_postulantes")
-    private int cantidadPostulantes;
-
-
-=======
     @Column(nullable = false)
     private int cantidadPostulantes;
 
@@ -86,5 +53,4 @@ public class Oferta implements Serializable{
     private Cargo cargoOferta;
 
 
->>>>>>> 592b9d441f68429fc22c8886d2449f919edbe124
 }
