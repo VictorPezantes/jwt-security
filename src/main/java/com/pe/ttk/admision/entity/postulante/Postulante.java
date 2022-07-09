@@ -11,7 +11,6 @@ import java.sql.Date;
 @AllArgsConstructor
 @Entity
 @Data
-
 @SqlResultSetMappings({
         @SqlResultSetMapping(name = "PostulanteMapping",
                         columns = {@ColumnResult(name = "primerNombre"),

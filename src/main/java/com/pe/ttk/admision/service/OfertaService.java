@@ -1,10 +1,12 @@
 package com.pe.ttk.admision.service;
 
+<<<<<<< HEAD
 import com.pe.ttk.admision.dto.OfertaDto;
+=======
+>>>>>>> 592b9d441f68429fc22c8886d2449f919edbe124
 import com.pe.ttk.admision.entity.oferta.Oferta;
 import org.springframework.stereotype.Service;
 
-import java.sql.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -14,20 +16,13 @@ public interface OfertaService {
 
     List<Oferta> listarOfertas();
 
-    List<Oferta> findByEstado(String estado);
+    void registrarOferta(Oferta oferta);
 
-    List<Oferta> findByFechaPublicacion(Date fechaPublicacion);
+    void actualizarOferta(Long id, Oferta oferta);
 
-    Optional<Oferta> findByTitulo(String titulo);
+    void delete(Long id);
 
-    List<Oferta> findByCreador(String creador);
+    Optional<Oferta> getOne(Long id);
 
-    void registrarOferta(OfertaDto ofertaDto);
-    void actualizarOferta(int id, OfertaDto ofertaDto);
-
-    void actualizarEstado(int id, OfertaDto ofertaDto);
-
-    void delete(int id);
-
-    Optional<Oferta> getOne(int id);
+    //void actualizarEstado(Long id, OfertaDto ofertaDto);
 }
