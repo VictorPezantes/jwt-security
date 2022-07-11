@@ -27,12 +27,10 @@ public class CargoController {
     @ApiOperation("Lista todos los cargos registrado y su paginacion")
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping(value = "/lista", produces = "application/json")
-    public String listarCargos(@RequestParam(value = "numpagina") Integer page,
-                               @RequestParam(value = "size") Integer size,
-                               Model model) {
+    public ResponseEntity<?> listarCargos() {
         List<Cargo> listaCargos = cargoServieImp.listaCargos();
 
-        return PaginationUtils.getPaginationedResults(listaCargos, page, size, model);
+        return ResponseEntity.status(HttpStatus.OK).body(listaCargos);
     }
 
     @ApiOperation("Registrar un cargo")

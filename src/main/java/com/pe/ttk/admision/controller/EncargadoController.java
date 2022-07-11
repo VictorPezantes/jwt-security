@@ -28,12 +28,10 @@ public class EncargadoController {
     @ApiOperation("Lista todos los encargados registrado y paginacion")
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping(value = "/lista", produces = "application/json")
-    public String  listarEncargado(@RequestParam(value = "numpagina") Integer page,
-                                              @RequestParam(value = "size") Integer size,
-                                              Model model) {
+    public ResponseEntity<?>   listarEncargado() {
         List<Encargado> listaEncargados = encargadoServieImp.listaEncargados();
 
-        return PaginationUtils.getPaginationedResults(listaEncargados, page, size, model);
+        return ResponseEntity.status(HttpStatus.OK).body(listaEncargados);
 
 
     }

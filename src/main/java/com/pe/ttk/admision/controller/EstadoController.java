@@ -25,12 +25,10 @@ public class EstadoController {
     @ApiOperation("Lista todos los estados de las  ofertas y su paginacion")
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping(value = "/lista", produces = "application/json")
-    public String listarEstados(@RequestParam(value = "numpagina") Integer page,
-                                @RequestParam(value = "size") Integer size,
-                                Model model) {
+    public ResponseEntity<?> listarEstados() {
         List<Estado> listaEstados = estadoServiceImp.listaEstados();
 
-        return PaginationUtils.getPaginationedResults(listaEstados, page, size, model);
+        return ResponseEntity.status(HttpStatus.OK).body(listaEstados);
 
     }
 
