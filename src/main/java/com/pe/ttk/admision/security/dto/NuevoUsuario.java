@@ -16,6 +16,17 @@ public class NuevoUsuario {
 	private String password;
 	@NotBlank
 	private String nombreUsuario;
+
+	private String fotografia;
+
+	public String getFotografia() {
+		return fotografia;
+	}
+
+	public void setFotografia(String fotografia) {
+		this.fotografia = fotografia;
+	}
+
 	private Set<String> roles = new HashSet<>();
 	public String getNombre() {
 		return nombre;
