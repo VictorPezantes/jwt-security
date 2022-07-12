@@ -2,14 +2,19 @@ package com.pe.ttk.admision.service.impl;
 
 import com.pe.ttk.admision.dto.OfertaDto;
 import com.pe.ttk.admision.entity.master.Cargo;
+import com.pe.ttk.admision.entity.master.Encargado;
 import com.pe.ttk.admision.entity.master.Estado;
 import com.pe.ttk.admision.entity.oferta.Oferta;
 import com.pe.ttk.admision.repository.CargoRepository;
+import com.pe.ttk.admision.repository.EncargadoRepository;
 import com.pe.ttk.admision.repository.EstadoRepository;
 import com.pe.ttk.admision.repository.OfertaRepository;
+import com.pe.ttk.admision.security.entity.Usuario;
+import com.pe.ttk.admision.security.repository.UsuarioRepository;
 import com.pe.ttk.admision.service.OfertaService;
 import com.pe.ttk.admision.util.ConvertirFechas;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -27,6 +32,12 @@ public class OfertaServiceImpl implements OfertaService {
     CargoRepository cargoRepository;
 
     @Autowired
+    UsuarioRepository usuarioRepository;
+
+    @Autowired
+    EncargadoRepository encargadoRepository;
+
+    @Autowired
     EstadoRepository estadoRepository;
 
     ConvertirFechas convertirFechas = new ConvertirFechas();
@@ -41,12 +52,22 @@ public class OfertaServiceImpl implements OfertaService {
         return null;
     }
 
-    public void registrarOferta(Oferta oferta) {
+    public void registrarOferta(Oferta oferta, Authentication auth) {
 
-        oferta.setEstadoOferta(oferta.getEstadoOferta());
+        String username = auth.getName();
+        Usuario usuario = usuarioRepository.findByNombreUsuario(username).get();
+        String emailEncargado= usuario.getEmail();
+
+        Encargado encargado = encargadoRepository.findByEmail(emailEncargado).get();
+
+        Estado estado = new Estado();
+
+        estado.setId(1L);
+
+        oferta.setEstadoOferta(estado);
         oferta.setCantidadPostulantes(oferta.getCantidadPostulantes());
         oferta.setCargoOferta(oferta.getCargoOferta());
-        oferta.setCreadorOferta(oferta.getCreadorOferta());
+        oferta.setCreadorOferta(encargado);
         oferta.setFechaPublicacion(null);
         oferta.setFechaCreacion(convertirFechas.stringToDateSql());
         oferta.setDescripcion(oferta.getDescripcion());

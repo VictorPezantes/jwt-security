@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
@@ -39,9 +40,9 @@ public class OfertaController {
     @ApiOperation("Crear ofertas")
     @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/crear")
-    public ResponseEntity<?> crearOferta(@RequestBody Oferta oferta) {
+    public ResponseEntity<?> crearOferta(@RequestBody Oferta oferta, Authentication auth) {
 
-        ofertaService.registrarOferta(oferta);
+        ofertaService.registrarOferta(oferta,auth);
         return new ResponseEntity(new Mensaje("Oferta creada"), HttpStatus.CREATED);
     }
 

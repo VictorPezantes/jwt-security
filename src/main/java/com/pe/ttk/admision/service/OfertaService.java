@@ -2,6 +2,7 @@ package com.pe.ttk.admision.service;
 
 import com.pe.ttk.admision.dto.OfertaDto;
 import com.pe.ttk.admision.entity.oferta.Oferta;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,7 +16,7 @@ public interface OfertaService {
 
     List<Oferta> listaFiltradaOfertas(String search);
 
-    void registrarOferta(Oferta oferta);
+    void registrarOferta(Oferta oferta, Authentication auth);
 
     void actualizarOferta(Long id, OfertaDto ofertaDto);
     void actualizarEstadoOferta(Long id, OfertaDto ofertaDto);
