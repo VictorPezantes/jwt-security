@@ -1,7 +1,9 @@
 package com.pe.ttk.admision.security.service;
 
+import java.util.List;
 import java.util.Optional;
 
+import com.pe.ttk.admision.entity.master.Estado;
 import com.pe.ttk.admision.security.entity.Usuario;
 import com.pe.ttk.admision.security.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +26,11 @@ public class UsuarioService {
 
 	}
 
+	public List<Usuario> listarUsuarios(){
+
+		return usuarioRepository.findAll();
+	}
+
 
 
 	public boolean existsByNombreUsuario(String nombreUsuario) {
@@ -34,6 +41,10 @@ public class UsuarioService {
 	public boolean existsByEmail(String email) {
 
 		return usuarioRepository.existsByEmail(email);
+	}
+
+	public void eliminarUsuario(int id) {
+		usuarioRepository.deleteById(id);
 	}
 	
 	public void save(Usuario usuario) {
