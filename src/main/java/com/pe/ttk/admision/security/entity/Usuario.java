@@ -26,12 +26,14 @@ public class Usuario {
 	@NotNull
 	private String password;
 	private String tokenPassword;
+
+	private String fotografia;
 	@ManyToMany(fetch= FetchType.EAGER)
 	@JoinTable(name = "usuario_rol", joinColumns = @JoinColumn(name = "usuario_id"), inverseJoinColumns = @JoinColumn(name = "rol_id"))
 	private Set<Rol> roles = new HashSet<>();
 
 	public Usuario(@NotNull String nombre, @NotNull String nombreUsuario, @NotNull String email,
-			@NotNull String password) {
+			@NotNull String password,String fotografia) {
 		this.nombre = nombre;
 		this.nombreUsuario = nombreUsuario;
 		this.email = email;
@@ -41,7 +43,14 @@ public class Usuario {
 	public Usuario() {
 		
 	}
-	
+
+	public String getFotografia() {
+		return fotografia;
+	}
+
+	public void setFotografia(String fotografia) {
+		this.fotografia = fotografia;
+	}
 
 	public String getTokenPassword() {
 		return tokenPassword;

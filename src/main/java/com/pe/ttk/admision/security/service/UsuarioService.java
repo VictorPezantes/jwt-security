@@ -24,6 +24,8 @@ public class UsuarioService {
 
 	}
 
+
+
 	public boolean existsByNombreUsuario(String nombreUsuario) {
 
 		return usuarioRepository.existsByNombreUsuario(nombreUsuario);
