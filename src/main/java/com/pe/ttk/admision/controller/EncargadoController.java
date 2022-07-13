@@ -13,6 +13,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -38,8 +39,15 @@ public class EncargadoController {
         @ApiOperation("Registrar encargado")
         @PreAuthorize("hasRole('ADMIN')")
         @PutMapping(value = "/registrar", produces = "application/json")
-        public ResponseEntity<?>  registrarEncargado(@RequestBody Encargado encargado){
+        public ResponseEntity<?>  registrarEncargado(@RequestBody Encargado encargado,
+                                                     BindingResult bindingResult){
 
+            if (bindingResult.hasErrors())
+                return new ResponseEntity(new Mensaje("campos mal puestos o email inválido"), HttpStatus.BAD_REQUEST);
+
+            boolean  ok = encargadoServieImp.existsByEmail(encargado.getEmail());
+            if (ok)
+                return new ResponseEntity(new Mensaje("ese email ya existe"), HttpStatus.BAD_REQUEST);
             encargadoServieImp.registrarEncargado(encargado);
             return new ResponseEntity(new Mensaje("encargado registrado correctamente"), HttpStatus.CREATED);
         }

@@ -19,4 +19,6 @@ public interface EncargadoService {
     void actualizarEncargado(Long id, Encargado encargado);
 
     Optional<Encargado> getOne(Long id);
+
+    public boolean existsByEmail(String email);
 }

@@ -44,4 +44,9 @@ public class EncargadoServieImp implements EncargadoService {
     public Optional<Encargado> getOne(Long id) {
         return encargadoRepository.findById( id);
     }
+
+    public boolean existsByEmail(String email) {
+
+        return encargadoRepository.existsByEmail(email);
+    }
 }

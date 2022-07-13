@@ -1,5 +1,6 @@
 package com.pe.ttk.admision.entity.oferta;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.pe.ttk.admision.entity.master.Cargo;
 import com.pe.ttk.admision.entity.master.Encargado;

@@ -14,5 +14,7 @@ public interface EncargadoRepository extends JpaRepository<Encargado, Long> {
 
     Optional<Encargado> findByEmail(String email);
 
+    boolean existsByEmail(String email);
+
 
 }

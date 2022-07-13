@@ -18,6 +18,9 @@ import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.sql.Date;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -43,20 +46,20 @@ public class OfertaServiceImpl implements OfertaService {
     ConvertirFechas convertirFechas = new ConvertirFechas();
 
     public List<Oferta> listarOfertas() {
-        return ofertaRepository.findAll();
+
+        List<Oferta> listaOfertas = ofertaRepository.findAll();
+
+        return listaOfertas;
     }
 
-    @Override
-    public List<Oferta> listaFiltradaOfertas(String search) {
 
-        return null;
-    }
+
 
     public void registrarOferta(Oferta oferta, Authentication auth) {
 
         String username = auth.getName();
         Usuario usuario = usuarioRepository.findByNombreUsuario(username).get();
-        String emailEncargado= usuario.getEmail();
+        String emailEncargado = usuario.getEmail();
 
         Encargado encargado = encargadoRepository.findByEmail(emailEncargado).get();
 
@@ -120,5 +123,28 @@ public class OfertaServiceImpl implements OfertaService {
         return ofertaRepository.findById(id);
     }
 
+    @Override
+    public List<Oferta> findOfertaByQueryString(String titulo) {
 
+        return ofertaRepository.findOfertaByQueryString(titulo);
+    }
+
+    public List<Oferta> findByCreadorOferta(Encargado creador) {
+
+        return ofertaRepository.findByCreadorOferta(creador);
+    }
+
+    public List<Oferta> findByEstadoOferta(Estado estado) {
+
+        return ofertaRepository.findByEstadoOferta(estado);
+
+
+    }
+
+    public List<Oferta> findByfechaPublicacion(Date fechaPublicacion) {
+
+        return ofertaRepository.findByfechaPublicacion(fechaPublicacion);
+
+
+    }
 }
