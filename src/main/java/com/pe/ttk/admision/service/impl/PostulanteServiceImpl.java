@@ -1,8 +1,8 @@
 package com.pe.ttk.admision.service.impl;
 
 import com.pe.ttk.admision.dto.PostulanteDto;
-import com.pe.ttk.admision.entity.postulante.Postulante;
-import com.pe.ttk.admision.entity.postulante.mapping.PostulanteMapping;
+import com.pe.ttk.admision.entity.admision.Postulante;
+import com.pe.ttk.admision.entity.admision.PostulanteMapping;
 import com.pe.ttk.admision.repository.PostulanteRepository;
 import com.pe.ttk.admision.service.PostulanteService;
 import com.pe.ttk.admision.util.ConvertirFechas;

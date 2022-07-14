@@ -4,7 +4,7 @@ import com.pe.ttk.admision.dto.OfertaDto;
 import com.pe.ttk.admision.entity.master.Cargo;
 import com.pe.ttk.admision.entity.master.Encargado;
 import com.pe.ttk.admision.entity.master.Estado;
-import com.pe.ttk.admision.entity.oferta.Oferta;
+import com.pe.ttk.admision.entity.admision.Oferta;
 import com.pe.ttk.admision.repository.CargoRepository;
 import com.pe.ttk.admision.repository.EncargadoRepository;
 import com.pe.ttk.admision.repository.EstadoRepository;
@@ -19,8 +19,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.Date;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 

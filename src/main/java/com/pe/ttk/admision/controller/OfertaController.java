@@ -2,17 +2,15 @@ package com.pe.ttk.admision.controller;
 
 import com.pe.ttk.admision.dto.Mensaje;
 import com.pe.ttk.admision.dto.OfertaDto;
-import com.pe.ttk.admision.dto.PostulanteDto;
 import com.pe.ttk.admision.entity.master.Encargado;
 import com.pe.ttk.admision.entity.master.Estado;
-import com.pe.ttk.admision.entity.oferta.Oferta;
+import com.pe.ttk.admision.entity.admision.Oferta;
 import com.pe.ttk.admision.exceptions.TTKDataException;
 import com.pe.ttk.admision.service.impl.OfertaServiceImpl;
 import com.pe.ttk.admision.util.FilterParam;
 import com.pe.ttk.admision.util.PaginationUtils;
 import com.pe.ttk.admision.util.SearchCriteria;
 import com.pe.ttk.admision.util.input.data.OfertaFindInputData;
-import com.pe.ttk.admision.util.input.data.PostulanteFindInputData;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

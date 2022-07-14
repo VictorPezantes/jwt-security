@@ -1,6 +1,5 @@
 package com.pe.ttk.admision.entity.master;
 
-import com.pe.ttk.admision.entity.oferta.Oferta;
 import lombok.*;
 
 import javax.persistence.*;

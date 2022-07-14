@@ -2,9 +2,7 @@ package com.pe.ttk.admision.service;
 
 import com.pe.ttk.admision.dto.OfertaDto;
 import com.pe.ttk.admision.entity.master.Encargado;
-import com.pe.ttk.admision.entity.master.Estado;
-import com.pe.ttk.admision.entity.oferta.Oferta;
-import org.springframework.data.repository.query.Param;
+import com.pe.ttk.admision.entity.admision.Oferta;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 

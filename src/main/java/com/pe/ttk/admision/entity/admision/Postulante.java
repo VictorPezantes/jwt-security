@@ -1,4 +1,4 @@
-package com.pe.ttk.admision.entity.postulante;
+package com.pe.ttk.admision.entity.admision;
 
 import lombok.*;
 

@@ -1,8 +1,6 @@
 package com.pe.ttk.admision.service.impl;
 
-import com.pe.ttk.admision.dto.CargoDto;
 import com.pe.ttk.admision.entity.master.Cargo;
-import com.pe.ttk.admision.entity.oferta.Oferta;
 import com.pe.ttk.admision.repository.CargoRepository;
 import com.pe.ttk.admision.service.CargoService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package com.pe.ttk.admision.entity.oferta;
+package com.pe.ttk.admision.entity.admision;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;

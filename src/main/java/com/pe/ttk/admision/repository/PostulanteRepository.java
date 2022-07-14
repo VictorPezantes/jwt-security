@@ -1,7 +1,7 @@
 package com.pe.ttk.admision.repository;
 
-import com.pe.ttk.admision.entity.postulante.Postulante;
-import com.pe.ttk.admision.entity.postulante.mapping.PostulanteMapping;
+import com.pe.ttk.admision.entity.admision.Postulante;
+import com.pe.ttk.admision.entity.admision.PostulanteMapping;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
