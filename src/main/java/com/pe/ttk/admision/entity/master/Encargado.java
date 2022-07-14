@@ -4,6 +4,7 @@ import com.pe.ttk.admision.entity.oferta.Oferta;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 import java.io.Serializable;
 
 @Entity
@@ -22,6 +23,7 @@ public class Encargado  implements Serializable{
     private String nombre;
     @Column(nullable = false, length = 50)
     private String apellido;
+    @Email
     @Column(nullable = true, length = 100)
     private String email;
     @Column(nullable = true, length = 100)

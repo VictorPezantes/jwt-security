@@ -55,7 +55,9 @@ public class AuthController {
     JwtProvider jwtProvider;
 
     @PostMapping("/nuevo")
-    public ResponseEntity<?> nuevo(@RequestParam(name = "foto", required = false) MultipartFile foto, @Valid NuevoUsuario nuevoUsuario, BindingResult bindingResult) {
+    public ResponseEntity<?> nuevo(@RequestParam(name = "foto", required = false) MultipartFile foto,
+                                   @Valid NuevoUsuario nuevoUsuario,
+                                   BindingResult bindingResult) {
         if (bindingResult.hasErrors())
             return new ResponseEntity(new Mensaje("campos mal puestos o email inválido"), HttpStatus.BAD_REQUEST);
         if (usuarioService.existsByNombreUsuario(nuevoUsuario.getNombreUsuario()))

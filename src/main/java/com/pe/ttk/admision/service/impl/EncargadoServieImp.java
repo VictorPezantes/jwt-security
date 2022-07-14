@@ -1,5 +1,6 @@
 package com.pe.ttk.admision.service.impl;
 
+import com.pe.ttk.admision.entity.master.Cargo;
 import com.pe.ttk.admision.entity.master.Encargado;
 import com.pe.ttk.admision.entity.master.Estado;
 import com.pe.ttk.admision.repository.EncargadoRepository;
@@ -36,8 +37,13 @@ public class EncargadoServieImp implements EncargadoService {
 
     @Override
     public void actualizarEncargado(Long id, Encargado encargado) {
-        encargado.setId(id);
-        encargadoRepository.save(encargado);
+
+        Encargado encargadoOferta = getOne(id).get();
+        encargadoOferta.setNombre(encargado.getNombre());
+        encargadoOferta.setApellido(encargado.getApellido());
+        encargadoOferta.setEmail(encargado.getEmail());
+        encargadoOferta.setTelefono(encargado.getTelefono());
+        encargadoRepository.save(encargadoOferta);
     }
 
     @Override

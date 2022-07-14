@@ -42,8 +42,9 @@ public class CargoServieImp implements CargoService {
     @Override
     public void actualizarCargo(Long id, Cargo cargo) {
 
-        cargo.setId(id);
-        cargoRepository.save(cargo);
+        Cargo cargoOferta = getOne(id).get();
+        cargoOferta.setNombreCargo(cargo.getNombreCargo());
+        cargoRepository.save(cargoOferta);
 
     }
 

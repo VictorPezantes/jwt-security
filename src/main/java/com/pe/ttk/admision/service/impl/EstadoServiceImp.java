@@ -37,11 +37,10 @@ public class EstadoServiceImp implements EstadoService {
     @Override
     public void actualizarEstado(Long id, Estado estado) {
 
-        estado.setId(id);
-        estadoRepository.save(estado);
-
+        Estado estadoOferta = getOne(id).get();
+        estadoOferta.setEstado(estado.getEstado());
+        estadoRepository.save(estadoOferta);
     }
-
     @Override
     public Optional<Estado> getOne(Long id) {
         return estadoRepository.findById( id);

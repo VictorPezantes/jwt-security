@@ -64,8 +64,8 @@ public class EncargadoController {
     @ApiOperation("Actualizar distintos campos de un encargado")
     @PreAuthorize("hasRole('ADMIN')")
     @PatchMapping(value = "/actualizar/{id}", produces = "application/json")
-    public ResponseEntity<?> actualizarEncargado(@PathVariable("id") Long id, @RequestBody Encargado encargado) {
-
+    public ResponseEntity<?> actualizarEncargado(@PathVariable("id") Long id,
+                                                 @RequestBody Encargado encargado) {
         encargadoServieImp.actualizarEncargado(id, encargado);
         return new ResponseEntity(new Mensaje("encargado actualizado"), HttpStatus.ACCEPTED);
     }
